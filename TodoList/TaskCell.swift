@@ -8,10 +8,21 @@
 
 import UIKit
 
+protocol TaskCellDelegate: AnyObject {
+    func btnTaskTapped(cell: TaskCell)
+}
+
+
 class TaskCell: UITableViewCell {
     
     @IBOutlet var taskName: UILabel!
     @IBOutlet var taskStatus: UILabel!
     
+    @IBOutlet var radioButton: UIButton!
+    weak var delegate: TaskCellDelegate?
+    
+    @IBAction func checkTask(_ sender: UIButton) {
+        delegate?.btnTaskTapped(cell: self)
+    }
     
 }

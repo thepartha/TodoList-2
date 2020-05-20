@@ -18,8 +18,17 @@ class TaskStore {
         }
     }
     
-    func addTask(taskName: String){
-        tasks.append(Task(taskName: taskName, completed: false))
+    func addTask(taskName: String) -> Task{
+        let newTask = Task(taskName: taskName, completed: false)
+        tasks.insert(newTask, at: 0)
+        return newTask
+    }
+    
+    func deleteTask(task: Task) {
+        if let index = tasks.firstIndex(of: task) {
+            tasks.remove(at: index)
+        }
+        
     }
     
 }

@@ -60,7 +60,9 @@
                                     <constraint firstAttribute="height" constant="144" id="Klf-2U-Uz2"/>
                                     <constraint firstAttribute="bottom" secondItem="b7h-Yy-Kh4" secondAttribute="bottom" constant="26" id="QwP-NK-0uK"/>
                                     <constraint firstItem="4EY-2d-2s4" firstAttribute="leading" secondItem="wgr-P7-YBv" secondAttribute="leading" constant="25" id="YDt-6z-qPH"/>
+                                    <constraint firstItem="b7h-Yy-Kh4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kfH-cu-jxa" secondAttribute="trailing" constant="8" symbolic="YES" id="YzG-9d-eiy"/>
                                     <constraint firstAttribute="trailing" secondItem="b7h-Yy-Kh4" secondAttribute="trailing" constant="16" id="g8S-4G-u9c"/>
+                                    <constraint firstItem="b7h-Yy-Kh4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4EY-2d-2s4" secondAttribute="trailing" constant="8" symbolic="YES" id="hYb-kL-DJg"/>
                                     <constraint firstItem="4EY-2d-2s4" firstAttribute="top" secondItem="kfH-cu-jxa" secondAttribute="bottom" constant="8" id="mT6-tf-MYS"/>
                                 </constraints>
                             </view>
@@ -68,24 +70,15 @@
                                 <rect key="frame" x="0.0" y="144" width="414" height="718"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TaskCell" rowHeight="80" id="tid-jO-9fQ" customClass="TaskCell" customModule="TodoList" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TaskCell" rowHeight="80" id="tid-jO-9fQ" customClass="TaskCell" customModule="TodoList" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tid-jO-9fQ" id="m8x-Mp-xEh">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="351" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yj2-7Q-lau">
-                                                    <rect key="frame" x="28" y="19" width="60" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="9Mu-BC-ddo"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXH-dY-p5F">
-                                                    <rect key="frame" x="28" y="52" width="36" height="17"/>
+                                                    <rect key="frame" x="68" y="52" width="36" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="17" id="zvi-4p-cTV"/>
                                                     </constraints>
@@ -93,16 +86,39 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eP5-LI-06y">
+                                                    <rect key="frame" x="15" y="20" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="XOr-gT-opH"/>
+                                                        <constraint firstAttribute="width" constant="40" id="pF7-pI-Vz8"/>
+                                                    </constraints>
+                                                    <state key="normal" image="radioButton"/>
+                                                    <connections>
+                                                        <action selector="checkTask:" destination="tid-jO-9fQ" eventType="touchUpInside" id="WCR-5a-1AT"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yj2-7Q-lau">
+                                                    <rect key="frame" x="68" y="16" width="60" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="9Mu-BC-ddo"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Yj2-7Q-lau" firstAttribute="leading" secondItem="m8x-Mp-xEh" secondAttribute="leadingMargin" constant="8" id="KSe-Mj-PRW"/>
-                                                <constraint firstItem="Yj2-7Q-lau" firstAttribute="top" secondItem="m8x-Mp-xEh" secondAttribute="topMargin" constant="8" id="caB-xJ-IPM"/>
-                                                <constraint firstItem="tXH-dY-p5F" firstAttribute="top" secondItem="Yj2-7Q-lau" secondAttribute="bottom" constant="3" id="ijM-lZ-Vab"/>
-                                                <constraint firstItem="tXH-dY-p5F" firstAttribute="top" secondItem="Yj2-7Q-lau" secondAttribute="bottom" constant="3" id="kJl-hp-ADg"/>
-                                                <constraint firstItem="tXH-dY-p5F" firstAttribute="leading" secondItem="m8x-Mp-xEh" secondAttribute="leadingMargin" constant="8" id="t1w-7O-ge8"/>
+                                                <constraint firstItem="eP5-LI-06y" firstAttribute="top" secondItem="m8x-Mp-xEh" secondAttribute="top" constant="20" id="CVT-LU-6Im"/>
+                                                <constraint firstItem="eP5-LI-06y" firstAttribute="leading" secondItem="m8x-Mp-xEh" secondAttribute="leading" constant="15" id="FLr-IX-auN"/>
+                                                <constraint firstItem="Yj2-7Q-lau" firstAttribute="leading" secondItem="eP5-LI-06y" secondAttribute="trailing" constant="13" id="MpD-Eg-JW4"/>
+                                                <constraint firstItem="Yj2-7Q-lau" firstAttribute="top" secondItem="m8x-Mp-xEh" secondAttribute="topMargin" constant="5" id="caB-xJ-IPM"/>
+                                                <constraint firstItem="tXH-dY-p5F" firstAttribute="top" secondItem="Yj2-7Q-lau" secondAttribute="bottom" constant="6" id="ijM-lZ-Vab"/>
+                                                <constraint firstItem="tXH-dY-p5F" firstAttribute="top" secondItem="Yj2-7Q-lau" secondAttribute="bottom" constant="6" id="kJl-hp-ADg"/>
+                                                <constraint firstItem="tXH-dY-p5F" firstAttribute="leading" secondItem="eP5-LI-06y" secondAttribute="trailing" constant="13" id="neQ-Ui-70B"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="radioButton" destination="eP5-LI-06y" id="254-U7-cNp"/>
                                             <outlet property="taskName" destination="Yj2-7Q-lau" id="eek-zY-pLE"/>
                                             <outlet property="taskStatus" destination="tXH-dY-p5F" id="ug3-32-C7F"/>
                                         </connections>
@@ -137,4 +153,7 @@
             <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="radioButton" width="49" height="49"/>
+    </resources>
 </document>
