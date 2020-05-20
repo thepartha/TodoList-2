@@ -69,6 +69,13 @@ class TodoListViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "taskDetail" {
+            let detailViewController = segue.destination as! TaskDetailViewController
+            
+        }
+    }
 }
 
 //MARK: TableviewController methods
