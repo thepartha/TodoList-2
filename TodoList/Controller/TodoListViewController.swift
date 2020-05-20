@@ -48,8 +48,6 @@ class TodoListViewController: UIViewController, UITableViewDelegate, UITableView
         present(alertController, animated: true)
     }
     
-
-    
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
@@ -72,8 +70,11 @@ class TodoListViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "taskDetail" {
-            let detailViewController = segue.destination as! TaskDetailViewController
-            
+            if let row = tableView.indexPathForSelectedRow?.row{
+                let task = taskStore.tasks[row]
+                let detailViewController = segue.destination as! TaskDetailViewController
+                detailViewController.task = task
+            }
         }
     }
 }
@@ -103,7 +104,7 @@ extension TodoListViewController {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        performSegue(withIdentifier: "taskDetail", sender: self)
     }
 }
 

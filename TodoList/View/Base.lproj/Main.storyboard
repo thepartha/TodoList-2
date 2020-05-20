@@ -162,7 +162,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="fRI-0Z-gEc">
-                                <rect key="frame" x="15" y="20" width="384" height="82"/>
+                                <rect key="frame" x="15" y="20" width="384" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2w-oY-3gQ">
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="20.5"/>
@@ -171,15 +171,15 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Ac-ay-0sh">
-                                        <rect key="frame" x="0.0" y="32.5" width="384" height="49.5"/>
+                                        <rect key="frame" x="0.0" y="32.5" width="384" height="42.5"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="x2N-Ee-ILF">
-                                <rect key="frame" x="15" y="132" width="384" height="60"/>
+                                <rect key="frame" x="15" y="125" width="384" height="60"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYb-56-mjC">
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="17"/>
@@ -192,7 +192,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gIJ-Ih-C89">
                                                 <rect key="frame" x="0.0" y="0.0" width="323" height="31"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -211,7 +211,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="6AI-Np-5R6">
-                                <rect key="frame" x="15" y="222" width="384" height="200"/>
+                                <rect key="frame" x="15" y="215" width="384" height="200"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIr-FV-Bnq">
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="20.5"/>
@@ -232,7 +232,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6m-Zg-7Tt">
-                                <rect key="frame" x="157" y="447" width="100" height="50"/>
+                                <rect key="frame" x="157" y="440" width="100" height="50"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="MXa-5K-se8"/>
@@ -245,6 +245,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="x2N-Ee-ILF" firstAttribute="leading" secondItem="a5l-gh-nxu" secondAttribute="leading" constant="15" id="84r-qB-pMY"/>
                             <constraint firstItem="x2N-Ee-ILF" firstAttribute="top" secondItem="fRI-0Z-gEc" secondAttribute="bottom" constant="30" id="N29-wi-mJC"/>
@@ -259,10 +260,24 @@
                             <constraint firstItem="fRI-0Z-gEc" firstAttribute="leading" secondItem="a5l-gh-nxu" secondAttribute="leading" constant="15" id="tf2-lE-u0u"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="a5l-gh-nxu"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Yi5-i6-u0D" appends="YES" id="mZ1-AX-r8l"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="fbZ-36-TCQ"/>
+                    <connections>
+                        <outlet property="taskName" destination="0Ac-ay-0sh" id="1wI-nS-epE"/>
+                        <outlet property="taskNotes" destination="jsi-oF-VwR" id="4We-wi-o4n"/>
+                        <outlet property="taskStatus" destination="gIJ-Ih-C89" id="61s-if-AI4"/>
+                        <outlet property="toggleStatus" destination="yCG-eO-qtC" id="ZYV-kR-3Dc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sdi-aC-Z8J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Yi5-i6-u0D">
+                    <connections>
+                        <action selector="viewTapped:" destination="sdf-WH-tAs" id="XAV-0F-BrT"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="885.50724637681162" y="130.58035714285714"/>
         </scene>
