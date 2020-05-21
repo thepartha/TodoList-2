@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 protocol detailViewControllerDelegate: AnyObject {
     func saveData(task: Task)
 }
@@ -30,6 +31,11 @@ class TaskDetailViewController: UIViewController, UITextFieldDelegate{
     }
     
     @IBAction func saveTask(_ sender: Any) {
+        if let taskNameUpdated = taskName.text, let taskDetailsUpdated = taskNotes.text{
+            task?.taskDetails = taskDetailsUpdated
+            task?.completed = toggleStatus.isOn
+            task?.taskName = taskNameUpdated
+        }
         if let task = task {
             delegate?.saveData(task: task)
         }
@@ -45,16 +51,15 @@ class TaskDetailViewController: UIViewController, UITextFieldDelegate{
             }
              taskStatus.text = task.completed ? "Completed" : "Pending"
         }
-       
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        if let taskNameText = task?.taskName, let taskStatusV = task?.completed {
+        if let taskNameText = task?.taskName, let taskStatusV = task?.completed, let taskDetails = task?.taskDetails {
             taskName.text = taskNameText
             taskStatus.text = taskStatusV ? "Completed" : "Pending"
             toggleStatus.setOn(taskStatusV ? true : false, animated: animated)
+            taskNotes.text = taskDetails
         }
     }
     
@@ -65,6 +70,5 @@ class TaskDetailViewController: UIViewController, UITextFieldDelegate{
             task.completed = toggleStatus.isOn
         }
     }
-    
-    
+
 }

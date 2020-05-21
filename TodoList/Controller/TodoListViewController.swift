@@ -9,25 +9,24 @@
 import UIKit
 
 class TodoListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, TaskCellDelegate, detailViewControllerDelegate {
+    
     func saveData(task: Task) {
-        if let index = taskStore.tasks.firstIndex(of: task) {
-            taskStore.tasks[index] = task
-        }
+        print(task)
+           taskStore.tasks[selectedIndex] = task
+            tableView.reloadData()
     }
-    
-    
+
     func btnTaskTapped(cell: TaskCell) {
        let indexPath = self.tableView.indexPath(for: cell)!
        taskStore.tasks[indexPath.row].completed = !taskStore.tasks[indexPath.row].completed
         tableView.reloadData()
     }
-    
-    
+
     @IBOutlet var tableView: UITableView!
     var taskStore: TaskStore!
     @IBOutlet var today: UILabel!
     var addTask: String = ""
-		
+    var selectedIndex: Int!
     
     @IBAction func addTask(_ sender: Any) {
         let alertController = UIAlertController(title: "Add Task", message: "Add a task message here", preferredStyle: .alert)
@@ -79,6 +78,7 @@ class TodoListViewController: UIViewController, UITableViewDelegate, UITableView
             if let row = tableView.indexPathForSelectedRow?.row{
                 let task = taskStore.tasks[row]
                 let detailViewController = segue.destination as! TaskDetailViewController
+                detailViewController.delegate = self
                 detailViewController.task = task
             }
         }
@@ -110,6 +110,7 @@ extension TodoListViewController {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndex = indexPath.row
         performSegue(withIdentifier: "taskDetail", sender: self)
     }
 }
