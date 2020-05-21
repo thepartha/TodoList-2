@@ -89,6 +89,7 @@
 			children = (
 				B2E8932A2472EACE009D0E0A /* TodoListViewController.swift */,
 				B28DB82A2474D998009BEF52 /* TaskDetailViewController.swift */,
+				B2340E3F247371B600758E10 /* TaskCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -105,7 +106,6 @@
 		B2335FBD24756838002A1B63 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B2340E3F247371B600758E10 /* TaskCell.swift */,
 				B2E8932C2472EACE009D0E0A /* Main.storyboard */,
 			);
 			path = View;

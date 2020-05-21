@@ -121,7 +121,7 @@
                                             <outlet property="radioButton" destination="eP5-LI-06y" id="254-U7-cNp"/>
                                             <outlet property="taskName" destination="Yj2-7Q-lau" id="eek-zY-pLE"/>
                                             <outlet property="taskStatus" destination="tXH-dY-p5F" id="ug3-32-C7F"/>
-                                            <segue destination="sdf-WH-tAs" kind="show" identifier="taskDetail" id="prt-cM-651"/>
+                                            <segue destination="sdf-WH-tAs" kind="showDetail" identifier="taskDetail" id="prt-cM-651"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -198,6 +198,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yCG-eO-qtC">
                                                 <rect key="frame" x="335" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="taskStatusUpdated:" destination="sdf-WH-tAs" eventType="valueChanged" id="Bu7-T3-KD8"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -242,6 +245,9 @@
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveTask:" destination="sdf-WH-tAs" eventType="touchUpInside" id="drg-BA-BWD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

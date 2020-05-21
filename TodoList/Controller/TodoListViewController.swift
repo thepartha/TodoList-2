@@ -8,7 +8,13 @@
 
 import UIKit
 
-class TodoListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, TaskCellDelegate {
+class TodoListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, TaskCellDelegate, detailViewControllerDelegate {
+    func saveData(task: Task) {
+        if let index = taskStore.tasks.firstIndex(of: task) {
+            taskStore.tasks[index] = task
+        }
+    }
+    
     
     func btnTaskTapped(cell: TaskCell) {
        let indexPath = self.tableView.indexPath(for: cell)!
@@ -110,5 +116,9 @@ extension TodoListViewController {
 
 
 extension TodoListViewController {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tableView.reloadData()
+    }
     
 }
